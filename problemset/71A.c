@@ -12,9 +12,14 @@ int main(void) {
 	scanf("%d", &n);
 
 	char word[100] = "";
-	while(n > 0) {
+	size_t length;
+	while(n--) {
 		scanf("%s", word);
-		printf("len: %zu.\n", str_len(word));
+		length = str_len(word);
+		if(length > 10)
+		printf("%c%zu%c\n", word[0], length-2, word[length-1]);
+		else printf("%s\n", word);
+
 	}
 
 	return 0;
