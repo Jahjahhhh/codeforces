@@ -2,34 +2,31 @@
 
 using namespace std;
 
+void print_moves(int d) {
+	int m = 0;
+	if(d >= 10) {
+		m += d / 10;
+		if(d % 10 > 0) m++;
+	} else {
+		m++;
+	}
+	cout << m << endl;
+}
+
 int main() {
-	int t; cin >> t;
+	int t, a, b;
+	cin >> t;
 	while(t--) {
-		int a, b;
+		int m = 0, d;
 		cin >> a >> b;
-		int moves = 0;
 		if(a > b) {
-			while(a != b) {
-				if((a - b >= 1) && (a - b <= 10)) {
-					a -= (a - b);
-					moves++;
-				} else {
-					a -= (10 * (a / b));
-					moves += (a / b);
-				}
-			}
-		} else if(a < b) {
-			while(a <= b) {
-				if((b - a >= 1) && (b - a <= 10)) {
-					a += (b - a);
-					moves++;
-				} else {
-					a += (10 * (b / a));
-					moves += (b / a);
-					cout << a << " " << b << " " << moves << endl;
-				}
-			}
+			d = a - b;
+			print_moves(d);
+		} else if(b > a) {
+			d = b - a;
+			print_moves(d);
+		} else if(a == b) {
+			cout << "0" << endl;
 		}
-		cout << moves << endl;
 	}
 }
