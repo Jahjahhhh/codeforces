@@ -10,7 +10,7 @@ fi
 filename="$1.cpp"
 
 # Write the desired content into the new file
-echo '#include <iostream>
+echo '#include <bits/stdc++.h>
 
 using namespace std;
 
