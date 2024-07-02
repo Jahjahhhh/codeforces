@@ -2,6 +2,17 @@
 
 using namespace std;
 
+pair<string, int> find_max(map<string, int> mp) {
+    pair<string, int> max_val = make_pair("", 0);
+    map<string, int>::iterator curr_val;
+    for(curr_val = mp.begin(); curr_val != mp.end(); curr_val++) {
+        if(curr_val->second > max_val.second) {
+            max_val = make_pair(curr_val->first, curr_val->second);
+        }
+    }
+    return max_val;
+}
+
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
@@ -17,5 +28,6 @@ int main() {
             m[s] = 1;
         }
     }
-    int ans = *max_element(m.begin(), m.end());
+    pair<string, int> ans = find_max(m);
+    cout << ans.first;
 }
