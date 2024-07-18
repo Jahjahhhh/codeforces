@@ -9,12 +9,9 @@ int main() {
 	int t; cin >> t;
 	while(t--) {
 		int n; cin >> n;
-		if(n == 1) {
-			cout << 2 << endl;
-		} else if(n == 2 || n == 3) {
-			cout << 1 << endl;
-		} else {
-			cout << (int)(ceil(n / 3.0)) << endl;
+		for(int i = 0; i < n; i++) {
+			cout << 1 << ' ';
 		}
+		cout << endl;
 	}
 }

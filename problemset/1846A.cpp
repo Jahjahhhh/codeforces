@@ -9,12 +9,13 @@ int main() {
 	int t; cin >> t;
 	while(t--) {
 		int n; cin >> n;
-		if(n == 1) {
-			cout << 2 << endl;
-		} else if(n == 2 || n == 3) {
-			cout << 1 << endl;
-		} else {
-			cout << (int)(ceil(n / 3.0)) << endl;
+
+		int ans = 0;
+		for(int i = 0; i < n; i++) {
+			int a, b;
+			cin >> a >> b;
+			if(a > b) ans++;
 		}
+		cout << ans << endl;
 	}
 }
